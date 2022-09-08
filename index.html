@@ -16,18 +16,17 @@
       <div class="weather-app">
         <div class="container">
           <div class="input-group">
-            <input type="text" class="form-control py-2" value="1" />
+            <input type="text" class="form-control py-2" value="Enter a city" />
             <button class="btn btn-outline-primary border-left-0 border" type="submit">
               Search
             </button>
-            <button class="btn btn-outline-primary border-left-0 border" type="submit"> <i
-                class="fa-solid fa-location-dot"></i>
-            </button>
+            <button class="btn btn-outline-primary border-left-0 border" type="submit">
+              Current</button>
           </div>
         </div>
-        <ul>
+        <ul class="heading">
           <li>
-            Toronto, CA
+            <span class="location">Toronto,CA</span>
           </li>
           <li>
             Tuesday, September 6th 16:00
@@ -39,7 +38,7 @@
         <div class="row">
           <div class="col-6">
             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width="150" alt="sunny">
-            12°C|°F
+            <span class="today-temp">12</span><span class="unit">C°|°F</span>
           </div>
           <div class="col-6">
             <ul>

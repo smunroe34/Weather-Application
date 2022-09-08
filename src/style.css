@@ -1,8 +1,36 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .weather-app {
   max-width: 600px;
   margin: 30px auto;
   padding:20px;
   border: 1px solid rgba(0, 0, 0, 0.924);
   border-radius: 5px;
+  background-color: rgb(129, 193, 218);
+}
+.today-temp {
+font-family: Google Sans,arial,sans-serif;
+font-size: 40px;
+letter-spacing: 0;
+line-height: 20px;
 }
 
+.unit {
+  color: #202124;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 90px;
+    margin-top: 6px;
+    padding-left: 6px;
+    vertical-align: top;
+}
+.heading {
+  list-style: none;
+  padding-left: 16px;
+}
+.location {
+  font-weight: bolder;
+  font-size: 25px;
+  padding-top: 5px;
+}
