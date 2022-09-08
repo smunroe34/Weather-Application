@@ -1,10 +1,8 @@
-.row {
-  text-align: center;
-}
 .weather-app {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding:20px;
+  border: 1px solid rgba(0, 0, 0, 0.924);
+  border-radius: 5px;
 }
-h1 {
-  color: blue;
-}
+
