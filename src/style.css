@@ -28,6 +28,7 @@ body {
 .heading {
   list-style: none;
   padding-left: 16px;
+  text-transform: capitalize;
 }
 #city {
   font-weight: bolder;
@@ -38,6 +39,7 @@ body {
   list-style: none;
   padding-top: 40px;
   text-align: left;
+  text-transform: capitalize;
 }
 .row {
   text-align: center;
