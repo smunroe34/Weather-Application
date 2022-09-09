@@ -9,7 +9,7 @@ body {
   border-radius: 5px;
   background-color: rgb(129, 193, 218);
 }
-.today-temp {
+#today-temp {
   font-family: Google Sans,arial,sans-serif;
   font-size: 40px;
   letter-spacing: 0;
@@ -29,7 +29,7 @@ body {
   list-style: none;
   padding-left: 16px;
 }
-.location {
+#city {
   font-weight: bolder;
   font-size: 25px;
   padding-top: 5px;
