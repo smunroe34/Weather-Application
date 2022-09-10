@@ -55,7 +55,13 @@ temperatureElement.innerHTML= Math.round (farhenTemperature);
 
 }
 
-celsiusTemperature = null;
+function showCelsiusTemperature (event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector ("#today-temp");
+  temperatureElement.innerHTML = Math.round (celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector ("#search-form")
 form.addEventListener ("submit", handleSubmit);
@@ -64,5 +70,7 @@ form.addEventListener ("submit", handleSubmit);
 let fahrenheitLink = document.querySelector ("#fahrenheit-link")
 fahrenheitLink.addEventListener ("click", showFarhenheitTemperature)
 
+let celsiusLink = document.querySelector ("#celsius-link")
+celsiusLink.addEventListener ("click", showCelsiusTemperature)
 
 search ("Toronto")
