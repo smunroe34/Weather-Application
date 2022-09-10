@@ -50,6 +50,8 @@ search (cityInput.value);
 function showFarhenheitTemperature (event) {
 event.preventDefault();
 let farhenTemperature = (celsiusTemperature * 9)/5+32;
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
 let temperatureElement = document.querySelector("#today-temp");
 temperatureElement.innerHTML= Math.round (farhenTemperature);
 
@@ -57,6 +59,8 @@ temperatureElement.innerHTML= Math.round (farhenTemperature);
 
 function showCelsiusTemperature (event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove ("active");
   let temperatureElement = document.querySelector ("#today-temp");
   temperatureElement.innerHTML = Math.round (celsiusTemperature);
 }
