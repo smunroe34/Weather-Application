@@ -50,3 +50,16 @@ body {
 li::first-letter {
   text-transform: capitalize;
 }
+
+
+.row.active:hover {
+  text-decoration: underline;
+}
+.active {
+  color: #202124;
+  cursor: default;
+}
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: #202124;
+} 
