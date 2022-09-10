@@ -25,10 +25,9 @@ body {
   padding-left: 6px;
   vertical-align: top;
 }
-.heading {
+#heading {
   list-style: none;
   padding-left: 16px;
-  text-transform: capitalize;
 }
 #city {
   font-weight: bolder;
@@ -43,4 +42,7 @@ body {
 }
 .row {
   text-align: center;
+}
+li::first-letter {
+  text-transform: capitalize;
 }
