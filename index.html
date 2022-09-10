@@ -14,16 +14,21 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="container">
-          <div class="input-group">
-            <input type="text" class="form-control py-2" value="Enter a city" />
-            <button class="btn btn-outline-primary border-left-0 border" type="submit">
-              Search
-            </button>
-            <button class="btn btn-outline-primary border-left-0 border" type="submit">
-              Current</button>
+      <form class="search-form" id="search-form">
+        <div class="row">
+          <div class="col-6">
+            <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
+              class="form-control shadow-sm" />
           </div>
-        </div>
+          <div class="col-3">
+            <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
+          </div>
+          <div class="col-3">
+            <button class="btn btn-success w-100" id="current-location-button">
+              Current
+            </button>
+          </div>
+      </form>
         <ul id="heading">
           <li>
             <span id="city">Toronto,CA</span>
