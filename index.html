@@ -14,21 +14,22 @@
   <body>
     <div class="container">
       <div class="weather-app">
-      <form class="search-form" id="search-form">
-        <div class="row">
-          <div class="col-6">
-            <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
-              class="form-control shadow-sm" />
-          </div>
-          <div class="col-3">
-            <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100"id="search-form" />
-          </div>
-          <div class="col-3">
-            <button class="btn btn-success w-100" id="current-location-button">
-              My location
-            </button>
-          </div>
-      </form>
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
+                class="form-control shadow-sm" />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100"
+                id="search-form" />
+            </div>
+            <div class="col-3">
+              <button class="btn btn-success w-100" id="current-location-button">
+                My location
+              </button>
+            </div>
+        </form>
         <ul id="heading">
           <li>
             <span id="city">Toronto,CA</span>
@@ -43,7 +44,7 @@
         <div class="row">
           <div class="col-6">
             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width="150" alt="sunny" id="icon">
-            <span id="today-temp">12</span><span class="unit">C°|<a href="#">°F</a></span>
+            <span id="today-temp">12</span><span class="unit"><a href="#"id="celsius-link">°C</a>|<a href="#" id="fahrenheit-link">°F</a></span>
           </div>
           <div class="col-6">
             <ul class="heading-2">

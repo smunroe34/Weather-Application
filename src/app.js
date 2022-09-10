@@ -23,7 +23,9 @@ function displayTemperature (response) {
   let dateElement = document.querySelector ("#date");
   let iconElement = document.querySelector ("#icon");
   
-  temperatureElement.innerHTML = Math.round (response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  
+  temperatureElement.innerHTML = Math.round (celsiusTemperature);
   cityElement.innerHTML= response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -45,7 +47,22 @@ let cityInput = document.querySelector ("#city-input");
 search (cityInput.value);
 }
 
-search ("Paris")
+function showFarhenheitTemperature (event) {
+event.preventDefault();
+let farhenTemperature = (celsiusTemperature * 9)/5+32;
+let temperatureElement = document.querySelector("#today-temp");
+temperatureElement.innerHTML= Math.round (farhenTemperature);
+
+}
+
+celsiusTemperature = null;
 
 let form = document.querySelector ("#search-form")
 form.addEventListener ("submit", handleSubmit);
+
+
+let fahrenheitLink = document.querySelector ("#fahrenheit-link")
+fahrenheitLink.addEventListener ("click", showFarhenheitTemperature)
+
+
+search ("Toronto")
