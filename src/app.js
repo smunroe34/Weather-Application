@@ -64,7 +64,21 @@ function showCelsiusTemperature (event) {
   let temperatureElement = document.querySelector ("#today-temp");
   temperatureElement.innerHTML = Math.round (celsiusTemperature);
 }
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+function getPosition(position) {
+  let apiKey = "dc55516602874d9b155a4733747850c9";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayTemperature);
+}
+function showCurrentTemperature(response) {
+  let temperatureElement = document.querySelector("city");
+  temperatureElement.innerHTML = `${response.data.name}`;
 
+  showTemperature(response);
+}
 let celsiusTemperature = null;
 
 let form = document.querySelector ("#search-form")
@@ -76,5 +90,8 @@ fahrenheitLink.addEventListener ("click", showFarhenheitTemperature)
 
 let celsiusLink = document.querySelector ("#celsius-link")
 celsiusLink.addEventListener ("click", showCelsiusTemperature)
+
+let currentButton = document.querySelector("#current-location-button");
+currentButton.addEventListener("click", getCurrentPosition);
 
 search ("Toronto")
