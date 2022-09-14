@@ -42,12 +42,6 @@ body {
   font-size: 20px;
 
 }
-.row {
-  text-align:center;
-  font-size: 20px;
-  margin-left: -2.5px;
-  
-}
 li::first-letter {
   text-transform: capitalize;
 }
