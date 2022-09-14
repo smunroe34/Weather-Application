@@ -58,3 +58,15 @@ a:hover, a:link, a:active {
 .footer {
   text-align: center;
 }
+.weather-forecast {
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+  font-weight: bold;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+  
+}
