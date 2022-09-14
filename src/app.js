@@ -79,6 +79,37 @@ function showCurrentTemperature(response) {
 
   showTemperature(response);
 }
+
+function displayForecast() {
+let forecastElement = document.querySelector ("#forecast");
+
+let forecastHTML = `<div class ="row">`;
+let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday","Tuesday"]
+days.forEach (function(day) {
+  forecastHTML = forecastHTML + ` 
+              <div class="col-2">
+                <div class="weather-forecast-date">
+                ${day}
+                </div>
+                <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="sunny" width=45px" />
+                <br>
+              <div class="weather-temperatures"> 
+                <span class="weather-forecast-temperature-max">
+                18°
+                </span> 
+                <span class="weather-forecast-temperature-min">
+                12°
+                </span>
+              </div>
+              </div>`;
+
+});
+
+  forecastHTML = forecastHTML +`</div>`;       
+  forecastElement.innerHTML = forecastHTML;
+
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector ("#search-form")
@@ -95,3 +126,4 @@ let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
 search ("Toronto")
+displayForecast();
