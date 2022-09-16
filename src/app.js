@@ -40,7 +40,7 @@ function displayTemperature (response) {
   iconElement.setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt",response.data.weather[0].description);
   
-  getForecast(response.data.coord);
+getForecast(response.data.coord);
 }
 function search(city) {
 let apiKey = "dc55516602874d9b155a4733747850c9";
@@ -89,30 +89,39 @@ function showCurrentTemperature(response) {
 }
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
 let forecastElement = document.querySelector ("#forecast");
+
 
 let forecastHTML = `<div class ="row">`;
 let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday","Tuesday"]
-days.forEach (function(day) {
+forecast.forEach (function(forecastDay, index) {
+  if (index <6) {
   forecastHTML = forecastHTML + ` 
               <div class="col-2">
                 <div class="weather-forecast-date">
-                ${day}
+                ${formatDay(forecastDay.dt)}
                 </div>
-                <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="sunny" width=45px" />
+                <img src= "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"; alt="sunny" width= "70px" />
                 <br>
               <div class="weather-temperatures"> 
                 <span class="weather-forecast-temperature-max">
-                18°
+                ${Math.round(forecastDay.temp.max)}°
                 </span> 
                 <span class="weather-forecast-temperature-min">
-                12°
+                ${Math.round (forecastDay.temp.min)}°
                 </span>
               </div>
               </div>`;
-
+              }
 });
 
+function formatDay (timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday", "Friday","Saturday"]
+return days [day]
+}
   forecastHTML = forecastHTML +`</div>`;       
   forecastElement.innerHTML = forecastHTML;
 
