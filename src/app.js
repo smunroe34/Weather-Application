@@ -55,23 +55,6 @@ let cityInput = document.querySelector ("#city-input");
 search (cityInput.value);
 }
 
-function showFarhenheitTemperature (event) {
-event.preventDefault();
-let farhenTemperature = (celsiusTemperature * 9)/5+32;
-celsiusLink.classList.remove("active");
-fahrenheitLink.classList.add("active");
-let temperatureElement = document.querySelector("#today-temp");
-temperatureElement.innerHTML= Math.round (farhenTemperature);
-
-}
-
-function showCelsiusTemperature (event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove ("active");
-  let temperatureElement = document.querySelector ("#today-temp");
-  temperatureElement.innerHTML = Math.round (celsiusTemperature);
-}
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
@@ -89,7 +72,7 @@ function showCurrentTemperature(response) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
+let forecast = response.data.daily;
 let forecastElement = document.querySelector ("#forecast");
 
 
@@ -113,7 +96,7 @@ forecast.forEach (function(forecastDay, index) {
                 </span>
               </div>
               </div>`;
-              }
+  }
 });
 
 function formatDay (timestamp) {
@@ -127,17 +110,8 @@ return days [day]
 
 }
 
-let celsiusTemperature = null;
-
 let form = document.querySelector ("#search-form")
 form.addEventListener ("submit", handleSubmit);
-
-
-let fahrenheitLink = document.querySelector ("#fahrenheit-link")
-fahrenheitLink.addEventListener ("click", showFarhenheitTemperature)
-
-let celsiusLink = document.querySelector ("#celsius-link")
-celsiusLink.addEventListener ("click", showCelsiusTemperature)
 
 let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", getCurrentPosition);
